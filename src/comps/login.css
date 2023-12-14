@@ -5,13 +5,13 @@ body {
 }
 
 .HeaderBox{
-    background-color: #003A63; /* black background color */
-    height: 65px; /* adjust the height as needed */
+    background-color: #003A63; 
+    height: 65px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100; /* ensure it's above other elements */
+    z-index: 100; 
 
 }
 
@@ -51,9 +51,9 @@ body {
 
 .Logo {
     width: 180px;
-    height: 180px; 
+    height: 180px;
     border-radius: 60%;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .Spinner {
@@ -62,7 +62,7 @@ body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 0 auto 20px; /* Center the spinner and create space below */
+    margin: 0 auto 20px; 
     animation: spin 1s linear infinite;
 }
 
@@ -94,7 +94,7 @@ input {
 .loginbtn {
     background-color: #236a91bf;
     color: #fff;
-    width: 45%;
+    /* width: 45%; */
     padding: 20px;
     border: none;
     border-radius: 20px;

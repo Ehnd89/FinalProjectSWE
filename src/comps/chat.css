@@ -1,84 +1,82 @@
 .ChatBox {
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .Messages {
-    flex-grow: 1;
-    padding: 10px;
-    overflow-y: auto;
-  }
-  
-  .Message {
-    padding: 8px;
-    margin: 80px;
-    border-radius: 5px;
-    max-width: 25%;
-    float: right;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .user {
-    background-color: #e0e0e0;
-    align-self: flex-end;
-  }
-  
-  .advisor {
-    background-color: #236a91bf;
-    color: #fff;
-    align-self: flex-start;
-  }
-  
-  .InputBox {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    border-top: 1px solid #ccc;
-  }
-  
-  input {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 8px;
-    margin-left: 10px;
-    background-color: #236a91bf;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #155679bf;
-  }
-  
-  .Hidden {
-    display: none;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5%;
+}
 
-  .ChatContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
+.Messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
 
-  }
+.Message {
+  padding: 8px;
+  margin: 8px; /* Adjusted margin for better spacing */
+  border-radius: 5px;
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  background-color: #e0e0e0;
+  align-self: flex-end; /* User messages on the right */
+}
+
+.advisor {
+  background-color: #236a91bf;
+  color: #fff;
+  align-self: flex-start; /* Advisor messages on the left */
+}
+
+.InputBox {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px;
+  margin-left: 10px;
+  background-color: #236a91bf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #155679bf;
+}
+
+.Hidden {
+  display: none;
+}
+
+.ChatContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 15%;
+}
 
 .IntroSection {
   text-align: center;
-}
-
-.bison{
-    margin-top: 70px;
 }

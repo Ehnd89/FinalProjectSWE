@@ -11,39 +11,38 @@ function Chat() {
   };
 
   const handleSendMessage = async () => {
-    setMessages((prevMessages) => [...prevMessages, { text: input, sender: 'user' }]);
-    setInput('');
-    setShowIntro(false); 
+    const userMessage = input;
 
-    
-    await handleAIResponse(input);
+    // Append the user's message to the conversation
+    const updatedMessages = [...messages, { text: userMessage, sender: 'user' }];
+    setMessages(updatedMessages);
+    setInput('');
+    setShowIntro(false);
+
+    // Send the entire conversation history to OpenAI
+    await handleAIResponse(updatedMessages);
   };
 
-  const handleAIResponse = async (userMessage) => {
+  const handleAIResponse = async (conversation) => {
     try {
-      
-      const conversation = [
-        { role: 'user', content: userMessage },
-        ...messages.map((msg) => ({ role: msg.sender, content: msg.text })),
-      ];
-
-      
       console.log('Conversation:', conversation);
 
-      
+      const payload = {
+        model: 'gpt-3.5-turbo',
+        messages: conversation.map((msg) => ({ role: msg.sender === 'user' ? 'user' : 'assistant', content: msg.text })),
+      };
+
+      console.log('OpenAI Request Payload:', payload);
+
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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', // Replace with your OpenAI API key
+          'Authorization': 'Bearer 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',
         },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: conversation,
-        }),
+        body: JSON.stringify(payload),
       });
 
-     
       console.log('OpenAI Response:', response);
 
       if (!response.ok) {
@@ -51,8 +50,6 @@ function Chat() {
       }
 
       const data = await response.json();
-
-      
       const aiResponse = data.choices[0].message.content;
 
       setMessages((prevMessages) => [...prevMessages, { text: aiResponse, sender: 'advisor' }]);
@@ -63,10 +60,10 @@ function Chat() {
 
   return (
     <div className="ChatContainer">
-      {(showIntro || messages.length === 0) && (
+      {showIntro && (
         <div className="IntroSection">
-          <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Howard_Bison_logo.svg" alt="Logo"  className='bison'/>
-          <p>How can I help you today?</p>
+          <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Howard_Bison_logo.svg" alt="Logo" />
+          <p>Hello! How can I assist you today?</p>
         </div>
       )}
       <div className="ChatBox">
@@ -80,7 +77,7 @@ function Chat() {
         <div className="InputBox">
           <input
             type="text"
-            placeholder="Type a message..."
+            placeholder="Ask me anything..."
             value={input}
             onChange={handleInputChange}
           />
