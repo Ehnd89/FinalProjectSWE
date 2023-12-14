@@ -1,0 +1,70 @@
+.ProfileSection{
+    display: flex;
+    flex-direction: column;
+    width: 58%;
+    margin-top: 50px;
+    padding: 20px;
+    height: 520px;
+    border: .5px solid rgb(208, 207, 207);
+    top: 40%;
+    left: 65%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    
+}
+.Name{
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.top-info{
+    display: flex;
+    flex-direction: row;
+    gap: 350px;
+}
+
+.edit{
+    background-color: #236a91bf;
+    color: #fff;
+    width: 13%;
+    height: 35px;
+    /* padding: 12px; */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 65px;
+    align-items: center;
+    /* margin-left: 300px; */
+    /* float: right; */
+    /* margin-top: 20px; */
+}
+
+.sectionOne{
+    margin-left: 20px;
+
+}
+
+.info{
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.sub-sectionOne{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    text-align: center;
+    position: relative;
+
+}
+
+.grey-line {
+    width: 95%;
+    height: 2px; /* Adjust the height as needed */
+    background-color: #ccc; /* Grey color */
+    margin-top: 50px;
+  }
